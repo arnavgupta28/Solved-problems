@@ -1,0 +1,19 @@
+from typing import List 
+
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+        r1 = set("qwertyuiop")
+        r2 = set("asdfghjkl")
+        r3 = set("zxcvbnm")
+        res = []
+
+        for i in words:
+            x = set(i.lower())
+            if(x <= r1 or x <= r2 or x <= r3):
+                res.append(i)
+        return res
+                
+# Example usage:
+solution = Solution()
+words = ["Hello", "Alaska", "Dad", "Peace"]
+print(solution.findWords(words))  # Output: ["Alaska", "Dad"]
